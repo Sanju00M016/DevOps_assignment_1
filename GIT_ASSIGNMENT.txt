@@ -1,0 +1,58 @@
+PROBLEM STATEMENT
+
+THREE DEVELOPERS ARE WORKING IN APERTURE TECHNOLOGY CO. THEIR COMPANY WANT A BETTER SOURCE CODE MANAGEMENT SYSTEM BECAUSE THE EARLIER TOOL HAD THE TENDENCY TO SAVE REDUNDANT CODE. MULTIPLE DEVELOPERS WORKING SIMULTANEOUSLY ON SAME BLOCK OF CODE ALSO CAUSED PROBLEMS. YOU ARE MIKE, AND YOUR MANAGER HAS GIVEN YOU THE TASK OF MOVING THE COMPANY’S CODE BASE TO GIT AND GITHUB.
+
+ACTION ITEMS
+
+•CREATE A LOCAL GIT REPOSITORY AND MOVE THE ENTIRE CODE BASE TO IT
+
+[root@ip-172-31-35-251 DevOps_2_assignment]# mkdir DevOps_2_assignment
+[root@ip-172-31-35-251 DevOps_2_assignment]# git init 
+[root@ip-172-31-35-251 DevOps_2_assignment]# mv ../sample-project .
+root@ip-172-31-35-251 DevOps_2_assignment]# cd sample-project
+[root@ip-172-31-35-251 sample-project]# ls -ltr
+total 4
+-rw-r--r-- 1 root root 2866 Nov 14  2017 index.html
+drwxr-xr-x 2 root root  147 Nov 14  2017 img
+drwxr-xr-x 2 root root   26 Nov 14  2017 fonts
+drwxr-xr-x 2 root root   22 Nov 14  2017 css
+
+•CREATE A NEW BRANCH FOR A NEW FEATURE YOU WANT TO ADD TO THE APPLICATION
+
+[root@ip-172-31-35-251 sample-project]# git branch
+* master
+[root@ip-172-31-35-251 sample-project]# git branch newfeat
+[root@ip-172-31-35-251 sample-project]# git branch
+* master
+  newfeat
+  
+•MERGE BACK THE CREATED BRANCH WITH THE MASTER BRANCH
+
+[root@ip-172-31-35-251 sample-project]# git branch
+* master
+[root@ip-172-31-35-251 sample-project]#git merge newfeat
+Already up to date.
+
+
+•CREATE A REMOTE REPOSITORY
+
+SSH : git@github.com:Sanju00M016/DevOps_assignment_1.git
+HTTPS : https://github.com/Sanju00M016/DevOps_assignment_1.git
+
+[root@ip-172-31-35-251 sample-project]# git remote add origin git@github.com:Sanju00M016/DevOps_assignment_1.git
+[root@ip-172-31-35-251 sample-project]# git remote -v
+origin  git@github.com:Sanju00M016/DevOps_assignment_1.git (fetch)
+origin  git@github.com:Sanju00M016/DevOps_assignment_1.git (push)
+
+
+•PUSH THE LOCAL REPOSITORY TO COMPANY’S REMOTE REPOSITORY
+
+[root@ip-172-31-35-251 DevOps_2_assignment]# git push origin master
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (15/15), 460.50 KiB | 2.36 MiB/s, done.
+Total 15 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Sanju00M016/DevOps_assignment_1.git
+ * [new branch]      master -> master
+ 
