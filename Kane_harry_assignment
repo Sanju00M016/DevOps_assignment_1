@@ -1,0 +1,76 @@
+•Create two separate branches from master
+
+
+
+DevOps_Course_assigment# git branch P1
+
+DevOps_Course_assigment# git branch p2
+
+DevOps_Course_assigment# git branch
+
+
+
+* master
+
+  P1
+
+  P2
+
+
+
+•Make changes in the same function of the source code in both the branches
+
+
+
+DevOps_Course_assigment# git checkout P1
+
+DevOps_Course_assigment# vi Welcome.html
+
+DevOps_Course_assigment# git add Welcome.html
+
+DevOps_Course_assigment# git commit -m "Add new file"
+
+
+
+DevOps_Course_assigment# git checkout P2
+
+DevOps_Course_assigment# vi Welcome.html
+
+DevOps_Course_assigment# git add Welcome.html
+
+DevOps_Course_assigment# git commit -m "Add new file2"
+
+
+•Merge branch1 into the master
+
+
+
+$ git checkout master
+
+Switched to branch 'master'
+
+$ git merge P1
+
+
+
+•Try and merge branch2 into the master(merge conflict should arise)
+
+
+
+$ git merge P2
+
+CONFLICT (content): Merge conflict in samplefile.txt
+
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+
+•Install a merge tool of your choice and resolve the merge conflict using git merge tool command
+
+
+
+$ git config --global merge.tool kdiff3
+
+$ git mergetool
+
+$ git commit -a -m "fixed merge conflicts"
